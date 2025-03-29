@@ -1,0 +1,5 @@
+[tool.poetry]
+name = "task4-priority-queue"
+version = "0.1.0"
+description = "Bi-Directional Priority Queue Implementation"
+authors = ["ЗлатаБ <zlatabriznicenko@gmail.com>"]
