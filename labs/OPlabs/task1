@@ -1,0 +1,35 @@
+import time
+import random
+
+def fibonacci_generator():
+    a, b = 0, 1
+    while True:
+        yield a
+        a, b = b, a + b
+
+def consume_with_timeout(iterator, timeout):
+    print(f"--- Запуск обробки на {timeout} сек. ---")
+    
+    start_time = time.time()
+    count = 0
+    total_sum = 0
+
+    for value in iterator:
+        elapsed = time.time() - start_time
+        if elapsed >= timeout:
+            break
+        
+        count += 1
+        total_sum += value
+        avg = total_sum / count
+        
+        print(f"[{count}] Значение: {value} | Среднее: {avg:.2f}")
+        
+        time.sleep(0.1) 
+
+    print("--- Час сплив. Работа завершена. ---")
+
+if __name__ == "__main__":
+    fib_gen = fibonacci_generator()
+    
+    consume_with_timeout(fib_gen, timeout=3)
