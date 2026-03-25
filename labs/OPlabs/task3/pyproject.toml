@@ -1,0 +1,5 @@
+[tool.poetry]
+name = "task3-memoization"
+version = "0.1.0"
+description = "Memoization library with LRU, LFU and TTL strategies"
+authors = ["ЗлатаБ <zlatabriznicenko@gmail.com>"]
